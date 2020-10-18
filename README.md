@@ -44,10 +44,16 @@ kubectl create namespace flux
 
 ```
 helm upgrade -i flux fluxcd/flux \
-   --set git.url=git@github.com:dubuc/ambassador-flux \
+   --set git.url=https://github.com/dubuc/ambassador-flux \
+   --set git.readonly=true \
+   --set git.branch=helm \
+   --set manifestGeneration=true \
    --namespace flux
+```
 
+```
  helm upgrade -i helm-operator fluxcd/helm-operator \
    --set git.ssh.secretName=flux-git-deploy \
+   --set helm.versions=v3 \
    --namespace flux
 ```

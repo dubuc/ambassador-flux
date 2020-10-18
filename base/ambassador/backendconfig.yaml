@@ -5,9 +5,9 @@ metadata:
   name: ambassador
 spec:
   healthCheck:
-    checkIntervalSec: 10s
-    timeoutSec: 5s
+    checkIntervalSec: 10
+    timeoutSec: 5
     unhealthyThreshold: 3
     type: HTTP
     requestPath: /ambassador/v0/check_ready
-    port: 30080
+    port: 30887

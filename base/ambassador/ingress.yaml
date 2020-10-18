@@ -6,4 +6,4 @@ metadata:
 spec:
   backend:
     serviceName: ambassador
-    servicePort: 8080
+    servicePort: 80

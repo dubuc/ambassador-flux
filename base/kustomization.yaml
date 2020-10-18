@@ -4,6 +4,4 @@ kind: Kustomization
 namespace: demo
 
 resources:
-- ./ambassador/backendconfig.yaml
-- ./ambassador/ingress.yaml
-- ./ambassador/release.yaml
+- ./ambassador/
