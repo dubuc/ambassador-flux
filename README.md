@@ -39,6 +39,10 @@ kubectl apply -f https://raw.githubusercontent.com/fluxcd/helm-operator/master/d
 ```
 
 ```
+kubectl create namespace flux
+```
+
+```
 helm upgrade -i flux fluxcd/flux \
    --set git.url=git@github.com:dubuc/ambassador-flux \
    --namespace flux
