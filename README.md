@@ -27,3 +27,23 @@ The deployed service will bind to NodePort 30000. You can then use an HTTP/S Loa
 └── deploy
     └── kustomization.yaml
 ```
+
+## Install Flux and HelmOperator
+
+```
+helm repo add fluxcd https://charts.fluxcd.io
+```
+
+```
+kubectl apply -f https://raw.githubusercontent.com/fluxcd/helm-operator/master/deploy/crds.yaml
+```
+
+```
+helm upgrade -i flux fluxcd/flux \
+   --set git.url=git@github.com:dubuc/ambassador-flux \
+   --namespace flux
+
+ helm upgrade -i helm-operator fluxcd/helm-operator \
+   --set git.ssh.secretName=flux-git-deploy \
+   --namespace flux
+```

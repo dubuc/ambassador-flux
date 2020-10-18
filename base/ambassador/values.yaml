@@ -1,0 +1,13 @@
+service:
+  type: NodePort
+  annotations:
+    cloud.google.com/backend-config: '{"default": "ambassador"}'
+  ports:
+    - name: http
+      port: 80
+      targetPort: 8080
+      nodePort: 30080
+    - name: https
+      port: 443
+      targetPort: 8443
+      nodePort: 30443

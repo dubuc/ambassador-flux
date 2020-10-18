@@ -1,0 +1,13 @@
+---
+apiVersion: cloud.google.com/v1
+kind: BackendConfig
+metadata:
+  name: ambassador
+spec:
+  healthCheck:
+    checkIntervalSec: 10s
+    timeoutSec: 5s
+    unhealthyThreshold: 3
+    type: HTTP
+    requestPath: /ambassador/v0/check_ready
+    port: 30080
