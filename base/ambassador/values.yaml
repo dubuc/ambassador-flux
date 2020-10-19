@@ -11,8 +11,10 @@ service:
       port: 443
       targetPort: 8443
       nodePort: 30443
+    - name: admin
+      port: 8877
+      targetPort: 8877
+      nodePort: 30887
 
 adminService:
-  create: true
-  type: NodePort
-  port: 30887
+  create: false
